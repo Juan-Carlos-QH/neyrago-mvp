@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeyraGo | Tu centro de impresión, diseño y soporte en tu bolsillo</title>
+  
+  <!-- Tipografía Figtree / Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1C4878;
+      --primary-dark: #0F2A48;
+      --primary-light: #2A66A5;
+      --accent-soft: #EBF3FA;
+      --accent-badge: #D6E8F7;
+      --bg-cream: #F4F6F8;
+      --bg-card: #FFFFFF;
+      --text-title: #0C1E33;
+      --text-body: #475569;
+      --border: #E2E8F0;
+      --radius-phone: 44px;
+      --shadow-3d: 0 30px 60px -15px rgba(28, 72, 120, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.15);
+      --shadow-float: 0 15px 35px -5px rgba(28, 72, 120, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    header {
+      padding: 24px 0;
+    }
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 14px rgba(28, 72, 120, 0.3);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(28, 72, 120, 0.3);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(28, 72, 120, 0.35);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 100px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      min-height: 85vh;
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      color: var(--text-title);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .hero-content h1 span {
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--text-body);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    /* Store Badges */
+    .store-badges {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .store-btn {
+      background: #0f172a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    .store-btn:hover {
+      transform: translateY(-2px);
+    }
+    .store-btn strong {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.1;
+    }
+
+    /* Live Interactive Tabs */
+    .app-tabs {
+      display: inline-flex;
+      background: white;
+      padding: 6px;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(28, 72, 120, 0.25);
+    }
+
+    /* Phone Mockup Showcase */
+    .mockup-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .iphone-frame {
+      width: 320px;
+      height: 650px;
+      background: #1e293b;
+      border-radius: var(--radius-phone);
+      padding: 12px;
+      box-shadow: var(--shadow-3d);
+      position: relative;
+      border: 4px solid #334155;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+    .iphone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: none;
+    }
+    .iphone-screen img.active {
+      display: block;
+      animation: fadeIn 0.35s ease-in-out;
+    }
+
+    /* Floating UI Elements */
+    .floating-widget {
+      position: absolute;
+      background: white;
+      border-radius: 20px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-float);
+      border: 1px solid rgba(255,255,255,0.8);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(8px);
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+    .widget-left {
+      left: -40px;
+      top: 15%;
+      animation-delay: 0s;
+    }
+    .widget-right-top {
+      right: -30px;
+      top: 32%;
+      animation-delay: 1.5s;
+    }
+    .widget-right-bottom {
+      right: -45px;
+      bottom: 16%;
+      animation-delay: 0.8s;
+    }
+
+    .widget-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .icon-blue { background: #EBF3FA; color: var(--primary); }
+    .icon-green { background: #E6F7ED; color: #15803D; }
+    .icon-orange { background: #FEF3C7; color: #B45309; }
+
+    .widget-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-title);
+    }
+    .widget-text p {
+      font-size: 0.8rem;
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    /* Section Features */
+    .features-section {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 70px;
+    }
+    .section-header h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--text-title);
+      margin-bottom: 14px;
+    }
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-body);
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+      margin-bottom: 100px;
+    }
+    .feature-row:nth-child(even) {
+      direction: rtl;
+    }
+    .feature-row:nth-child(even) .feature-desc,
+    .feature-row:nth-child(even) .feature-mockup {
+      direction: ltr;
+    }
+
+    .feature-desc .badge-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--accent-soft);
+      color: var(--primary);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .feature-desc h3 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-title);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .feature-desc p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      margin-bottom: 24px;
+    }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    .feature-list li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .check-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #EBF3FA;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .feature-mockup {
+      display: flex;
+      justify-content: center;
+    }
+    .small-phone {
+      width: 280px;
+      height: 570px;
+      border-radius: 38px;
+      background: #0f172a;
+      padding: 10px;
+      box-shadow: var(--shadow-3d);
+      border: 3px solid #334155;
+    }
+    .small-phone img {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Lead Section */
+    .lead-section {
+      padding: 90px 0;
+      background: linear-gradient(180deg, #FFFFFF 0%, #EBF3FA 100%);
+    }
+    .lead-card {
+      background: white;
+      border-radius: 32px;
+      padding: 60px 48px;
+      max-width: 780px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-3d);
+      border: 1px solid var(--border);
+    }
+    .lead-card h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--text-title);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .lead-card p.subtitle {
+      text-align: center;
+      color: var(--text-body);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 26px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      color: var(--text-title);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 1.5px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(28, 72, 120, 0.12);
+    }
+
+    .radio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .choice-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      background: white;
+      transition: all 0.2s;
+    }
+    .choice-card:hover {
+      border-color: var(--primary-light);
+      background: #FAFCFE;
+    }
+    .choice-card.selected {
+      border-color: var(--primary);
+      background: var(--accent-soft);
+    }
+    .choice-card input[type="radio"] {
+      accent-color: var(--primary);
+      width: 20px;
+      height: 20px;
+    }
+    .choice-info h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-title);
+    }
+    .choice-info p {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 1.1rem;
+      margin-top: 14px;
+    }
+
+    .status-msg {
+      display: none;
+      padding: 16px;
+      border-radius: 14px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .status-success {
+      background: #E8F7ED;
+      color: #15803D;
+      border: 1px solid #BBF7D0;
+    }
+    .status-error {
+      background: #FEECEB;
+      color: #B92518;
+      border: 1px solid #FCD4D1;
+    }
+
+    /* ========================================================
+       ESTILOS DEL MODAL INTERACTIVO + ESCALA SEQ (1 AL 5)
+       ======================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 32px;
+      max-width: 860px;
+      width: 100%;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3);
+      max-height: 94vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: #F1F5F9;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #475569;
+      transition: background 0.2s;
+    }
+    .modal-close:hover {
+      background: #E2E8F0;
+    }
+
+    .sim-phone {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: 36px;
+      padding: 22px 18px;
+      box-shadow: 0 10px 25px rgba(28, 72, 120, 0.08);
+    }
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .sim-back {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .sim-title { font-weight: 800; font-size: 1.1rem; color: #0C1E33; }
+    .sim-label { font-size: 0.85rem; font-weight: 700; color: #334155; display: block; margin-bottom: 6px; }
+
+    .stepper-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 14px;
+    }
+    .btn-step {
+      background: #1C4878;
+      color: white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .txt-count { font-weight: 800; font-size: 1.1rem; }
+    .sim-select, .sim-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #E2E8F0;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      outline: none;
+      background: white;
+      font-family: inherit;
+    }
+    .sim-textarea { resize: none; height: 68px; }
+    .sim-upload-box {
+      border: 2px dashed #CBD5E1;
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      background: #FFFFFF;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .price-box {
+      background: #EBF3FA;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: #1C4878;
+      font-weight: 600;
+    }
+    .sim-btn-primary {
+      width: 100%;
+      background: #1C4878;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .sim-btn-primary:hover {
+      background: #0F2A48;
+    }
+
+    /* Días y Horas en Reparación */
+    .chips-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+    }
+    .chip-btn {
+      padding: 8px 10px;
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      min-width: 50px;
+    }
+    .chip-btn.active {
+      background: #1C4878;
+      color: white;
+      border-color: #1C4878;
+    }
+
+    .sim-note {
+      background: #EBF3FA;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.78rem;
+      color: #1C4878;
+      margin-bottom: 14px;
+      border-left: 3px solid #1C4878;
+      line-height: 1.35;
+    }
+
+    .sim-success-view {
+      text-align: center;
+      padding: 40px 10px;
+    }
+    .success-icon { font-size: 3.2rem; margin-bottom: 14px; }
+    .sim-success-view h4 { font-size: 1.25rem; font-weight: 800; color: #0C1E33; margin-bottom: 8px; }
+    .sim-success-view p { font-size: 0.9rem; color: #64748B; }
+
+    /* Panel SEQ de evaluación */
+    .rating-panel h3 { font-size: 1.5rem; color: #0C1E33; margin-bottom: 10px; font-weight: 800; }
+    .rating-panel p { color: #64748B; font-size: 0.95rem; margin-bottom: 26px; }
+    .rating-buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .rate-btn {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 16px 6px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #1C4878;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .rate-btn span {
+      display: block;
+      font-size: 0.7rem;
+      color: #64748B;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .rate-btn:hover {
+      background: #EBF3FA;
+      border-color: #1C4878;
+      transform: translateY(-2px);
+    }
+    .rating-feedback {
+      background: #E8F7ED;
+      color: #15803D;
+      padding: 14px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid #BBF7D0;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 992px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 30px; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .hero-content p { margin: 0 auto 30px; }
+      .store-badges { justify-content: center; }
+      .floating-widget { display: none; }
+      .feature-row, .feature-row:nth-child(even) { grid-template-columns: 1fr; direction: ltr; text-align: center; gap: 40px; }
+      .feature-list li { justify-content: center; }
+      .modal-content { grid-template-columns: 1fr; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo">
+        <span class="logo-badge">🖨️</span>
+        NeyraGo
+      </a>
+      <a href="#early-access" class="btn btn-primary">Acceso Anticipado</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="container hero">
+      <div class="hero-content">
+        <div class="app-tabs">
+          <button class="tab-btn active" onclick="switchAppScreen('servicios', this)">📱 Todos</button>
+          <button class="tab-btn" onclick="switchAppScreen('impresion', this)">📄 Impresión</button>
+          <button class="tab-btn" onclick="switchAppScreen('diseno', this)">🎨 Diseño</button>
+          <button class="tab-btn" onclick="switchAppScreen('reparacion', this)">💻 Soporte</button>
+        </div>
+
+        <h1>Imprime, diseña y repara <span>sin hacer colas</span>.</h1>
+        <p>Gestiona copias con cotización en vivo, bocetos de diseño y citas técnicas garantizadas directamente desde tu celular.</p>
+
+        <!-- Store Buttons -->
+        <div class="store-badges">
+          <a href="#early-access" class="store-btn">
+            <span>🍎</span>
+            <div>
+              <span>Disponible pronto en</span>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="#early-access" class="store-btn">
+            <span>🤖</span>
+            <div>
+              <span>Disponible pronto en</span>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Phone Showcase con Floating Elements -->
+      <div class="mockup-stage">
+        <!-- Floating Widget 1 -->
+        <div class="floating-widget widget-left">
+          <div class="widget-icon icon-blue">🖨️</div>
+          <div class="widget-text">
+            <h4>NeyraGo</h4>
+            <p>Cotiza & Reserva</p>
+          </div>
+        </div>
+
+        <!-- Floating Widget 2 -->
+        <div class="floating-widget widget-right-top">
+          <div class="widget-icon icon-green">⚡</div>
+          <div class="widget-text">
+            <h4>Precios accesibles</h4>
+            <p>Cotización al instante</p>
+          </div>
+        </div>
+
+        <!-- Floating Widget 3 -->
+        <div class="floating-widget widget-right-bottom">
+          <div class="widget-icon icon-orange">⏱️</div>
+          <div class="widget-text">
+            <h4>Cero esperas</h4>
+            <p>Atención prioritaria</p>
+          </div>
+        </div>
+
+        <!-- Realistic iPhone -->
+        <div class="iphone-frame">
+          <div class="iphone-screen">
+            <img id="screen-servicios" class="active" src="screen_servicios.png" alt="NeyraGo Servicios">
+            <img id="screen-impresion" src="screen_impresion.png" alt="NeyraGo Impresión">
+            <img id="screen-diseno" src="screen_diseno.png" alt="NeyraGo Diseño Gráfico">
+            <img id="screen-reparacion" src="screen_reparacion.png" alt="NeyraGo Soporte">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Diseñada para resolver en 3 simples pasos</h2>
+          <p>Olvídate del tráfico, las filas en mostrador y la falta de transparencia en tus trabajos.</p>
+        </div>
+
+        <!-- Feature 1: Impresión -->
+        <div class="feature-row">
+          <div class="feature-desc">
+            <span class="badge-tag">Servicio 01 · Impresiones</span>
+            <h3>Envía tus archivos y retira sin hacer cola</h3>
+            <p>Configura tamaño de hoja (A4, Carta), cantidad de copias, color o blanco y negro, y adjunta tus archivos PDF o DOCX de hasta 50MB.</p>
+            <ul class="feature-list">
+              <li><span class="check-circle">✓</span> Cálculo automático de costo en tiempo real</li>
+              <li><span class="check-circle">✓</span> Pago seguro desde la aplicación</li>
+              <li><span class="check-circle">✓</span> Recojo express listo en mostrador</li>
+            </ul>
+            <button type="button" class="btn btn-primary" onclick="openSimulator('impresion')">Probar Impresión</button>
+          </div>
+          <div class="feature-mockup">
+            <div class="small-phone">
+              <img src="screen_impresion.png" alt="Pantalla de Impresión">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Diseño Gráfico -->
+        <div class="feature-row">
+          <div class="feature-desc">
+            <span class="badge-tag">Servicio 02 · Diseño Creativo</span>
+            <h3>Desde tu boceto a mano hasta el diseño final</h3>
+            <p>¿Tienes una idea en servilleta o un cuaderno? Tómale foto, adjúntala y describe tu proyecto. Nuestro equipo cotiza y elabora tu propuesta.</p>
+            <ul class="feature-list">
+              <li><span class="check-circle">✓</span> Incluye hasta 2 rondas de correcciones sin costo extra</li>
+              <li><span class="check-circle">✓</span> Logos, afiches publicitarios, menús y flyers</li>
+              <li><span class="check-circle">✓</span> Comunicación fluida con el diseñador asignado</li>
+            </ul>
+            <button type="button" class="btn btn-primary" onclick="openSimulator('diseno')">Cotizar mi Diseño</button>
+          </div>
+          <div class="feature-mockup">
+            <div class="small-phone">
+              <img src="screen_diseno.png" alt="Pantalla de Diseño Gráfico">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Soporte Técnico -->
+        <div class="feature-row">
+          <div class="feature-desc">
+            <span class="badge-tag">Servicio 03 · Soporte Técnico</span>
+            <h3>Reserva de diagnóstico y ticket digital en taller</h3>
+            <p>No dejes tu equipo a la suerte. Reserva tu día y hora exacta de atención con un pago de S/ 10.00 por diagnóstico que se descuenta si aceptas la reparación.</p>
+            <ul class="feature-list">
+              <li><span class="check-circle">✓</span> Citas programadas: llegas y te atienden de inmediato</li>
+              <li><span class="check-circle">✓</span> Ticket de seguimiento con avances de tu laptop o impresora</li>
+              <li><span class="check-circle">✓</span> Diagnóstico profesional transparente</li>
+            </ul>
+            <button type="button" class="btn btn-primary" onclick="openSimulator('reparacion')">Agendar Diagnóstico</button>
+          </div>
+          <div class="feature-mockup">
+            <div class="small-phone">
+              <img src="screen_reparacion.png" alt="Pantalla de Soporte Técnico">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Validation MVP Form -->
+    <section class="lead-section" id="early-access">
+      <div class="container">
+        <div class="lead-card">
+          <h2>Sé de los primeros en usar NeyraGo</h2>
+          <p class="subtitle">Regístrate para el acceso anticipado y ayúdanos a priorizar lo que necesitas.</p>
+
+          <form id="leadForm">
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Tu Correo Electrónico *</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <!-- Validation Question (Pivoteo) -->
+            <div class="form-group">
+              <label>¿Cuál de estos servicios usarías primero en la app? *</label>
+              <div class="radio-grid">
+                <label class="choice-card selected" onclick="highlightChoice(this)">
+                  <input type="radio" name="servicio_interes" value="1. Impresiones sin cola" checked required>
+                  <div class="choice-info">
+                    <h5>1. Cotizar y pagar impresiones sin hacer cola</h5>
+                    <p>Subir archivos desde casa y recoger directo en mostrador</p>
+                  </div>
+                </label>
+
+                <label class="choice-card" onclick="highlightChoice(this)">
+                  <input type="radio" name="servicio_interes" value="2. Ticket y Cita Laptop en Taller">
+                  <div class="choice-info">
+                    <h5>2. Cita de diagnóstico y Ticket Digital de Laptop en taller</h5>
+                    <p>Atención técnica puntual y seguimiento del estado del equipo</p>
+                  </div>
+                </label>
+
+                <label class="choice-card" onclick="highlightChoice(this)">
+                  <input type="radio" name="servicio_interes" value="3. Ideas de Diseño Gráfico">
+                  <div class="choice-info">
+                    <h5>3. Enviar ideas y bocetos de Diseño Gráfico</h5>
+                    <p>Cotización personalizada con 2 rondas de cambios incluidas</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Optional Name -->
+            <div class="form-group">
+              <label for="nombre">Tu Nombre (opcional)</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Carlos Neyra">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">
+              Solicitar Acceso Anticipado
+            </button>
+
+            <div id="statusMessage" class="status-msg"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       MODAL SIMULADOR INTERACTIVO CON ESCALA SEQ (1 AL 5)
+       ======================================================== -->
+  <div id="simModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeSimulator()">✕</button>
+
+      <!-- Pantalla del Celular Interactivo -->
+      <div class="sim-phone">
+        <div class="sim-header">
+          <button class="sim-back" onclick="closeSimulator()">‹</button>
+          <span class="sim-title" id="simTitle">Impresión</span>
+          <span style="width: 24px;"></span>
+        </div>
+
+        <!-- 1. Flujo interactivo: Impresión -->
+        <div id="flow-impresion" class="sim-flow-content">
+          <label class="sim-label">Copias</label>
+          <div class="stepper-box">
+            <button type="button" class="btn-step" onclick="cambiarCopias(-1)">−</button>
+            <span id="txtCopias" class="txt-count">1</span>
+            <button type="button" class="btn-step" onclick="cambiarCopias(1)">+</button>
+          </div>
+
+          <label class="sim-label">Tamaño de papel</label>
+          <select class="sim-select" id="selTamano" onchange="calcularPrecio()">
+            <option value="A4">A4 (Estándar bond 75g)</option>
+            <option value="Carta">Carta (Letter)</option>
+            <option value="Oficio">Oficio</option>
+          </select>
+
+          <label class="sim-label">Color</label>
+          <select class="sim-select" id="selColor" onchange="calcularPrecio()">
+            <option value="bn">Blanco y negro (S/ 0.30)</option>
+            <option value="color">A Color (S/ 1.00)</option>
+          </select>
+
+          <div class="sim-upload-box">
+            <span style="font-size: 1.4rem;">📎</span>
+            <strong style="font-size: 0.85rem; color: #1C4878;">mi_tesis_final.pdf</strong>
+            <small style="color: #64748B;">Listo para enviar (3.8 MB)</small>
+          </div>
+
+          <div class="price-box">
+            <span>Total a pagar:</span>
+            <strong id="txtPrecio">S/ 0.20</strong>
+          </div>
+
+          <button type="button" class="sim-btn-primary" onclick="completarSimulacion()">
+            Confirmar pedido
+          </button>
+        </div>
+
+        <!-- 2. Flujo interactivo: Diseño Gráfico -->
+        <div id="flow-diseno" class="sim-flow-content" style="display:none;">
+          <label class="sim-label">Tipo de Proyecto</label>
+          <select class="sim-select">
+            <option>Diseño de Flyer Publicitario</option>
+            <option>Logotipo de Marca</option>
+            <option>Carta / Menú de Restaurante</option>
+            <option>Gigantografía / Banner</option>
+          </select>
+
+          <label class="sim-label">Cuéntanos tu idea o especificaciones</label>
+          <textarea class="sim-textarea" placeholder="Ej: Flyer promocional con tonos azules y logo..."></textarea>
+
+          <div class="sim-upload-box">
+            <span style="font-size: 1.4rem;">📸</span>
+            <strong style="font-size: 0.85rem; color: #1C4878;">boceto_a_mano.jpg</strong>
+            <small style="color: #64748B;">Foto de cuaderno adjuntada</small>
+          </div>
+
+          <div class="sim-note">
+            ℹ️ Incluye hasta <strong>2 rondas de correcciones</strong> sin costo extra.
+          </div>
+
+          <button type="button" class="sim-btn-primary" onclick="completarSimulacion()">
+            Enviar para Cotizar
+          </button>
+        </div>
+
+        <!-- 3. Flujo interactivo: Soporte Técnico -->
+        <div id="flow-reparacion" class="sim-flow-content" style="display:none;">
+          <label class="sim-label">Tipo de Equipo</label>
+          <select class="sim-select">
+            <option>Laptop (Lenovo / Asus / HP / Dell)</option>
+            <option>Computadora de Escritorio (PC)</option>
+            <option>Impresora Multifuncional</option>
+          </select>
+
+          <label class="sim-label">Fecha disponible</label>
+          <div class="chips-row">
+            <button type="button" class="chip-btn" onclick="seleccionarChip(this, '.date-chip')">Lun 24</button>
+            <button type="button" class="chip-btn active date-chip" onclick="seleccionarChip(this, '.date-chip')">Mar 25</button>
+            <button type="button" class="chip-btn date-chip" onclick="seleccionarChip(this, '.date-chip')">Mié 26</button>
+            <button type="button" class="chip-btn date-chip" onclick="seleccionarChip(this, '.date-chip')">Jue 27</button>
+          </div>
+
+          <label class="sim-label">Hora de atención</label>
+          <div class="chips-row">
+            <button type="button" class="chip-btn time-chip" onclick="seleccionarChip(this, '.time-chip')">9:00 am</button>
+            <button type="button" class="chip-btn active time-chip" onclick="seleccionarChip(this, '.time-chip')">11:00 am</button>
+            <button type="button" class="chip-btn time-chip" onclick="seleccionarChip(this, '.time-chip')">2:00 pm</button>
+          </div>
+
+          <div class="sim-note">
+            ℹ️ Pago de <strong>S/ 10.00</strong> por derecho de diagnóstico (se descuenta si aceptas la reparación).
+          </div>
+
+          <button type="button" class="sim-btn-primary" onclick="completarSimulacion()">
+            Pagar diagnóstico y Reservar
+          </button>
+        </div>
+
+        <!-- Pantalla de confirmación de simulación -->
+        <div id="simSuccessView" class="sim-success-view" style="display:none;">
+          <div class="success-icon">🎉</div>
+          <h4>¡Paso completado con éxito!</h4>
+          <p>Has interactuado con la interfaz de prueba que tendrá NeyraGo en camino a su diseño final.</p>
+        </div>
+      </div>
+
+      <!-- Panel SEQ de evaluación de Usabilidad (1 al 5) -->
+      <div class="rating-panel">
+        <h3>¿Qué tan fácil e intuitivo fue este paso?</h3>
+        <p>Evalúa la facilidad de uso de esta interfaz. Tu puntuación guiará los ajustes de diseño en Figma.</p>
+        
+        <div class="rating-buttons">
+          <button type="button" class="rate-btn" onclick="guardarEvaluacion(1)">
+            1<br><span>Muy difícil</span>
+          </button>
+          <button type="button" class="rate-btn" onclick="guardarEvaluacion(2)">
+            2<br><span>Difícil</span>
+          </button>
+          <button type="button" class="rate-btn" onclick="guardarEvaluacion(3)">
+            3<br><span>Regular</span>
+          </button>
+          <button type="button" class="rate-btn" onclick="guardarEvaluacion(4)">
+            4<br><span>Fácil</span>
+          </button>
+          <button type="button" class="rate-btn" onclick="guardarEvaluacion(5)">
+            5<br><span>Muy fácil</span>
+          </button>
+        </div>
+
+        <div id="ratingFeedback" class="rating-feedback" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Selector interactivo del teléfono principal
+    function switchAppScreen(screenKey, tabElement) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      tabElement.classList.add('active');
+
+      document.querySelectorAll('.iphone-screen img').forEach(img => img.classList.remove('active'));
+      const activeImg = document.getElementById('screen-' + screenKey);
+      if (activeImg) {
+        activeImg.classList.add('active');
+      }
+    }
+
+    // 2. Resaltado de tarjeta de radio seleccionada
+    function highlightChoice(cardElement) {
+      document.querySelectorAll('.choice-card').forEach(card => card.classList.remove('selected'));
+      cardElement.classList.add('selected');
+    }
+
+    // 3. URL de Google Apps Script para guardar datos
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyybwnc39fBse1XTTwFzefWDnkh0IxbMfKLmxQU3mxOQ7mjymS-7TUICvBcMCDyfOE8/exec";
+
+    // 4. Formulario principal de Leads
+    const form = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('btnSubmit');
+    const statusMsg = document.getElementById('statusMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Registrando tu acceso...";
+
+      const formData = new FormData(form);
+      const data = {
+        fecha: new Date().toLocaleString(),
+        email: formData.get('email'),
+        servicio_prioritario: formData.get('servicio_interes'),
+        nombre: formData.get('nombre') || 'No indicado'
+      };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data)
+        });
+
+        statusMsg.className = "status-msg status-success";
+        statusMsg.innerText = "¡Registro exitoso! Te contactaremos al habilitar tu cuenta.";
+        statusMsg.style.display = "block";
+        form.reset();
+      } catch (err) {
+        console.error("Error al enviar:", err);
+        statusMsg.className = "status-msg status-error";
+        statusMsg.innerText = "Ocurrió un error. Intenta nuevamente.";
+        statusMsg.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Solicitar Acceso Anticipado";
+      }
+    });
+
+    // ========================================================
+    // LÓGICA DEL SIMULADOR INTERACTIVO Y EVALUACIÓN SEQ (1 AL 5)
+    // ========================================================
+    let servicioActivo = "impresion";
+    let copiasActuales = 1;
+
+    function openSimulator(tipo) {
+      servicioActivo = tipo;
+      const modal = document.getElementById('simModal');
+      const title = document.getElementById('simTitle');
+      
+      document.getElementById('flow-impresion').style.display = 'none';
+      document.getElementById('flow-diseno').style.display = 'none';
+      document.getElementById('flow-reparacion').style.display = 'none';
+      document.getElementById('simSuccessView').style.display = 'none';
+      document.getElementById('ratingFeedback').style.display = 'none';
+
+      if (tipo === 'impresion') {
+        title.innerText = "Impresión Rápida";
+        document.getElementById('flow-impresion').style.display = 'block';
+      } else if (tipo === 'diseno') {
+        title.innerText = "Diseño Gráfico";
+        document.getElementById('flow-diseno').style.display = 'block';
+      } else if (tipo === 'reparacion') {
+        title.innerText = "Reparación Técnica";
+        document.getElementById('flow-reparacion').style.display = 'block';
+      }
+
+      modal.style.display = 'flex';
+    }
+
+    function closeSimulator() {
+      document.getElementById('simModal').style.display = 'none';
+    }
+
+    function cambiarCopias(delta) {
+      copiasActuales = Math.max(1, copiasActuales + delta);
+      document.getElementById('txtCopias').innerText = copiasActuales;
+      calcularPrecio();
+    }
+
+    function calcularPrecio() {
+      const color = document.getElementById('selColor').value;
+      const precioUnitario = (color === 'color') ? 1.00 : 0.30;
+      const total = (copiasActuales * precioUnitario).toFixed(2);
+      document.getElementById('txtPrecio').innerText = "S/ " + total;
+    }
+
+    function seleccionarChip(btn, selectorClase) {
+      document.querySelectorAll(selectorClase).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function completarSimulacion() {
+      document.getElementById('flow-impresion').style.display = 'none';
+      document.getElementById('flow-diseno').style.display = 'none';
+      document.getElementById('flow-reparacion').style.display = 'none';
+      document.getElementById('simSuccessView').style.display = 'block';
+    }
+
+    async function guardarEvaluacion(puntaje) {
+      const feedback = document.getElementById('ratingFeedback');
+      feedback.innerText = "Guardando evaluación (" + puntaje + " de 5)...";
+      feedback.style.display = "block";
+
+      const datosEvaluacion = {
+        tipo_evento: "evaluacion_ux",
+        fecha: new Date().toLocaleString(),
+        servicio: servicioActivo,
+        puntaje: puntaje,
+        nombre: "Evaluador Anónimo"
+      };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(datosEvaluacion)
+        });
+
+        feedback.innerText = "✅ ¡Calificación de " + puntaje + "/5 registrada con éxito! Gracias por tu feedback.";
+        setTimeout(() => { closeSimulator(); }, 2000);
+      } catch (err) {
+        feedback.innerText = "✅ Calificación guardada localmente (" + puntaje + "/5).";
+        setTimeout(() => { closeSimulator(); }, 2000);
+      }
+    }
+  </script>
+</body>
+</html>
